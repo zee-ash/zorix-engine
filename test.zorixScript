@@ -1,0 +1,30 @@
+bind(
+Type: "TextButton"
+Id: 2
+)
+
+setBackgroundColor(
+255
+255
+255
+)
+
+setTextColor(
+0
+0
+0
+) 
+
+setText(
+"+"
+)
+
+setPosition(
+0
+0
+)
+
+resize(
+100
+100
+)

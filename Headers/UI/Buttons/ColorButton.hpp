@@ -21,14 +21,19 @@ struct ColorButton
     std::function<void()> Function;
 
     // NOTE: n = new, so ny = new y :)
-    ColorButton(SDL_Renderer* renderer, float nx, float ny, float nw, float nh, SDL_Color NewButtonColor);
+    ColorButton();
 
+    void Init(SDL_Renderer* renderer, float nx, float ny, float nw, float nh, SDL_Color NewButtonColor);
     void handleFrame(bool ManageHover, SDL_Window* window);
     bool detectMouseHover(SDL_Window* window);
     void handleClick(SDL_Window* window);
 };
 
-ColorButton::ColorButton(SDL_Renderer* renderer, float nx, float ny, float nw, float nh, SDL_Color NewButtonColor){
+ColorButton::ColorButton(){
+
+}
+
+void ColorButton::Init(SDL_Renderer* renderer, float nx, float ny, float nw, float nh, SDL_Color NewButtonColor){
     x = nx; y = ny; w = nw; h = nh;
     ButtonColor = NewButtonColor;
     ButtonRenderer = renderer;
@@ -78,7 +83,7 @@ bool ColorButton::detectMouseHover(SDL_Window* window){
 void ColorButton::handleClick(SDL_Window* window){
 
     float mx, my;
-    Uint32 mousestate = SDL_GetMouseState(&mx, &my);
+    Uint32 mousestate = SDL_GetGlobalMouseState(&mx, &my);
 
     if (mousestate == SDL_BUTTON_MASK(SDL_BUTTON_LEFT)){
         if (detectMouseHover(window) == true){
