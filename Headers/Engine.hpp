@@ -12,7 +12,7 @@
 
 #include "UI/Buttons.hpp"
 
-#include "ZorixScriptParser.hpp"
+#include "Parser/ZorixScriptParser.hpp"
 
 std::any AllClassesWindowfunction(){
 

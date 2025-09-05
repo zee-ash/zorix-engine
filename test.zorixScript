@@ -9,14 +9,19 @@ setBackgroundColor(
 255
 )
 
+resize(
+200
+50
+)
+
+setText(
+"Click Me"
+)
+
 setTextColor(
 0
 0
 0
-) 
-
-setText(
-"+"
 )
 
 setPosition(
@@ -24,7 +29,32 @@ setPosition(
 0
 )
 
-resize(
-100
-100
+onClick::(
+
+setBackgroundColor(
+0
+0
+0
 )
+
+resize(
+200
+50
+)
+
+setText(
+"Thank You!!"
+)
+
+setTextColor(
+255
+255
+255
+)
+
+setPosition(
+0
+0
+)
+
+::)

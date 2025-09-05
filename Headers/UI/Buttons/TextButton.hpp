@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <functional>
 #include <vector>
+#include <sstream>
 
 #include "../../ErrorHandling.hpp"
 
@@ -32,6 +33,14 @@ struct TextButton
     void handleFrame(bool ManageHover, SDL_Window* window);
     bool detectMouseHover(SDL_Window* window);
     void handleClick(SDL_Window* window);
+
+    // NOTE: DSL Functions!
+    void setBackgroundColor(int R, int G, int B);
+    void setTextColor(int R, int G, int B);
+    void setText(std::string Text);
+
+    // NOTE: DSL Variables
+    std::istringstream onClickStream;
 };
 
 int LASTTEXTBUTTONOBJECTID = -1;
@@ -109,8 +118,25 @@ void TextButton::handleClick(SDL_Window* window){
 
     if (mousestate == SDL_BUTTON_MASK(SDL_BUTTON_LEFT)){
         if (detectMouseHover(window) == true){
+
             Function();
         }
     }
 
+}
+
+void TextButton::setBackgroundColor(int R, int G, int B){
+    ButtonColor.r = R;
+    ButtonColor.g = G;
+    ButtonColor.b = B;
+};
+
+void TextButton::setTextColor(int R, int G, int B){
+    TextColor.r = R;
+    TextColor.g = G;
+    TextColor.b = B;
+}
+
+void TextButton::setText(std::string Text){
+    rendertext = Text;
 }

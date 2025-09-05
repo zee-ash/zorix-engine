@@ -10,7 +10,7 @@
 
 #include "Headers/UI/Buttons.hpp"
 
-#include "Headers/ZorixScriptParser.hpp"
+#include "Headers/Parser/ZorixScriptParser.hpp"
 
 int main(){
 
